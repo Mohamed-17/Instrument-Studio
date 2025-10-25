@@ -11,3 +11,6 @@ body {
   color: var(--foreground);
   font-family: "Instrument Sans", sans-serif;
 }
+.italic {
+  font-style: italic;
+}
