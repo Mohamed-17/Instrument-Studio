@@ -1,22 +1,23 @@
 import Image from "next/image";
 import React from "react";
 import * as motion from "motion/react-client";
+import { instrumentItalic } from "@/fonts";
 function Hero() {
   return (
-    <div className="h-[calc(100vh-96px)] flex justify-center w-full px-5">
+    <div className="h-[calc(100vh-96px)] mt-20 md:mt-0 flex justify-center w-full px-5">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
         className="flex flex-col gap-4 items-center pt-30 relative h-fit text-4xl md:text-8xl"
       >
-        <h1 className="flex  gap-2 items-center text[#FFFFFF]  ">
-          <span className="italic">the</span>
+        <h1 className="flex  gap-4 items-center text[#FFFFFF]  ">
+          <span className={`${instrumentItalic.className}`}>the</span>
           <span className="uppercase">INSTRUMENT</span>
         </h1>
-        <h1 className="flex  gap-2 items-center text[#FFFFFF]">
+        <h1 className="flex  gap-4 items-center text[#FFFFFF]">
           <span className="uppercase">Design</span>
-          <span className="italic">studio</span>
+          <span className={`${instrumentItalic.className}`}>studio</span>
         </h1>
         <motion.div
           whileHover={{
@@ -42,7 +43,7 @@ function Hero() {
           </p>
         </div>
         <div className="md:ml-20 group flex justify-center items-center mt-5">
-          <button className="bg-white flex items-center justify-center gap-4 px-3 w-[181px] h-14 rounded-full text-black text-base">
+          <button className="bg-white flex items-center justify-center gap-4 px-3 w-[181px] h-14 rounded-full text-black text-base cursor-pointer">
             <span className="text-[14px] font-medium ">Work with us</span>
             <motion.div className="group-hover:rotate-180 transition-all duration-500  ease-in-out ">
               <Image
