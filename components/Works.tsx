@@ -1,29 +1,63 @@
 import Image from "next/image";
 import React from "react";
 import * as motion from "motion/react-client";
+const parentVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
+const childVariants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
 function Works() {
   return (
     <div className="px-4 md:px-6 space-y-10 mb-20">
-      <div className="flex  flex-col md:flex-row gap-8 items-center justify-center">
-        <div className="w-[500px] md:w-[709px] h-[700px] bg-[#1B30AE] rounded-xl relative overflow-hidden">
+      <motion.div
+        className="flex  flex-col md:flex-row gap-8 items-center justify-center px-5"
+        variants={parentVariants}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+      >
+        <motion.div
+          className=" w-[400px] md:w-[500px] lg:w-[709px] h-[550px] lg:h-[700px] bg-[#1B30AE] rounded-xl relative overflow-hidden"
+          variants={childVariants}
+        >
           <div className="absolute top-0 -left-10">
             <Image
               src={"/silver1.png"}
               alt="silver1"
               width={1000}
               height={1000}
-              className="w-[400px] h-[400px] object-contain"
+              className="w-[200px] md:w-[300px] lg:w-[400px]  object-contain"
             />
           </div>
-          <div className="absolute top-5 left-20 ">
+          <motion.div className="absolute  lg:top-5 lg:left-20 ">
             <Image
               src={"/silver2.png"}
               alt="silver2"
               width={1000}
               height={1000}
-              className="w-[600px] h-[600px] object-contain"
+              className="lg:w-[600px] object-contain"
             />
-          </div>
+          </motion.div>
           <div className="absolute bottom-0 -right-30">
             <Image
               src={"/silver3.png"}
@@ -33,17 +67,18 @@ function Works() {
               className="w-[400px] h-[400px] object-contain"
             />
           </div>
-          <div className="w-full h-full flex justify-center items-end text-[32px] pb-10">
+          <div className="w-full h-full flex justify-center items-end text-[18px] md:text-[24px] lg:text-[32px] pb-10">
             The future of Web3 on Bitcoin
           </div>
-        </div>
-        <div
-          className="w-[500px] md:w-[709px] h-[700px] bg-[#87E246] overflow-hidden relative rounded-xl"
+        </motion.div>
+        <motion.div
+          className=" w-[400px] md:w-[500px] lg:w-[709px] h-[550px] lg:h-[700px] bg-[#87E246] overflow-hidden relative rounded-xl"
           style={{
             backgroundImage: `url(/grass.png)`,
             backgroundSize: "contain",
             backgroundRepeat: "no-repeat",
           }}
+          variants={childVariants}
         >
           <div className="absolute top-10 left-[50%] -translate-x-1/2">
             <Image
@@ -54,13 +89,22 @@ function Works() {
               className="w-60 object-contain"
             />
           </div>
-          <div className="w-full h-full flex justify-center items-end text-[24px] md:text-[32px] pb-10 text-black">
+          <div className="w-full h-full flex justify-center items-end text-[18px] md:text-[24px] lg:text-[32px] pb-10 text-black">
             Not ordinary app for not ordinary photos
           </div>
-        </div>
-      </div>
-      <div className="flex  flex-col md:flex-row gap-8 items-center justify-center">
-        <div className="w-[500px] md:w-[709px] h-[700px] bg-[#2B2B2B] rounded-xl relative overflow-hidden">
+        </motion.div>
+      </motion.div>
+      <motion.div
+        className="flex  flex-col md:flex-row gap-8 items-center justify-center px-5"
+        variants={parentVariants}
+        initial="hidden"
+        whileInView={"show"}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+      >
+        <div className=" w-[400px] md:w-[500px] lg:w-[709px] h-[550px] lg:h-[700px] bg-[#2B2B2B] rounded-xl relative overflow-hidden">
           <Image
             src={"/sweatshirt.png"}
             alt="Sweatshirt"
@@ -68,11 +112,11 @@ function Works() {
             height={800}
             className="object-contain absolute w-120 h-120 top-10 left-[50%] -translate-x-[50%]"
           />
-          <div className="w-full h-full flex justify-center items-end text-[32px] pb-10 text-white">
+          <div className="w-full h-full flex justify-center items-end text-[18px] md:text-[24px] lg:text-[32px] pb-10 text-white">
             May the 4th be with you
           </div>
         </div>
-        <div className="w-[500px] md:w-[709px] h-[700px] bg-[#ED732E] rounded-xl relative overflow-hidden">
+        <div className=" w-[400px] md:w-[500px] lg:w-[709px] h-[550px] lg:h-[700px] bg-[#ED732E] rounded-xl relative overflow-hidden">
           <div className="absolute top-0  left-3">
             <Image
               src={"/bigWhiteBall.png"}
@@ -101,11 +145,11 @@ function Works() {
               className="object-contain w-40"
             />
           </motion.div>
-          <div className="w-full h-full flex justify-center items-end text-[32px] pb-10 text-white">
+          <div className="w-full h-full flex justify-center items-end text-[18px] md:text-[24px] lg:text-[32px] pb-10 text-white">
             Forgotten Wikipedia articles
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
