@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import * as motion from "motion/react-client";
-import { instrumentItalic } from "@/fonts";
+import { instrumentSerif } from "@/fonts";
 function Hero() {
   return (
     <div className="h-[calc(100vh-96px)] mt-20 md:mt-0 flex justify-center w-full px-5">
@@ -12,12 +12,12 @@ function Hero() {
         className="flex flex-col gap-4 items-center pt-30 relative h-fit text-4xl md:text-8xl"
       >
         <h1 className="flex  gap-4 items-center text[#FFFFFF]  ">
-          <span className={`${instrumentItalic.className}`}>the</span>
+          <span className={`${instrumentSerif.className} italic`}>the</span>
           <span className="uppercase">INSTRUMENT</span>
         </h1>
         <h1 className="flex  gap-4 items-center text[#FFFFFF]">
           <span className="uppercase">Design</span>
-          <span className={`${instrumentItalic.className}`}>studio</span>
+          <span className={`${instrumentSerif.className} italic`}>studio</span>
         </h1>
         <motion.div
           whileHover={{

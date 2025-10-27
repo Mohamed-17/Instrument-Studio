@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import Hero from "@/components/Hero";
 import ScrollContainer from "@/components/ScrollContainer";
 import Works from "@/components/Works";
@@ -8,6 +9,7 @@ function HomePage() {
     <ScrollContainer>
       <Hero />
       <Works />
+      <About />
     </ScrollContainer>
   );
 }
