@@ -41,7 +41,7 @@ const teamMembers: TeamMember[] = [
 
 function Team() {
   return (
-    <div className="flex justify-center w-full my-5 md:my-20">
+    <div className="flex justify-center w-full my-5 md:my-20 md:h-100 relative">
       <div className="relative w-full max-w-[1200px] min:h-[420px] flex flex-col md:flex-row items-center justify-center">
         {teamMembers.map((member, index) => (
           <motion.div
@@ -61,6 +61,10 @@ function Team() {
               className="text-center w-full space-y-3"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0, rotateZ: 15, x: -10 }}
+              viewport={{
+                once: true,
+                amount: 0.1,
+              }}
             >
               <div className="font-bold text-[14px]">{member.name}</div>
               <div className={`text-[18px] ${instrumentSerif.className}`}>
