@@ -4,6 +4,7 @@ import ScrollContainer from "@/components/ScrollContainer";
 import Works from "@/components/Works";
 import React from "react";
 import Clients from "@/components/Clients";
+import Capabilities from "@/components/Capabilities";
 function HomePage() {
   return (
     <ScrollContainer>
@@ -11,6 +12,7 @@ function HomePage() {
       <Works />
       <About />
       <Clients />
+      <Capabilities />
     </ScrollContainer>
   );
 }
