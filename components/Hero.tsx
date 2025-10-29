@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import * as motion from "motion/react-client";
 import { instrumentSerif } from "@/fonts";
+import Button from "./Button";
 function Hero() {
   return (
     <div className="h-[calc(100vh-96px)] mt-20 md:mt-0 flex justify-center w-full px-5">
@@ -43,18 +44,7 @@ function Hero() {
           </p>
         </div>
         <div className="md:ml-20 group flex justify-center items-center mt-5">
-          <button className="bg-white flex items-center justify-center gap-4 px-3 w-[181px] h-14 rounded-full text-black text-base cursor-pointer">
-            <span className="text-[14px] font-medium ">Work with us</span>
-            <motion.div className="group-hover:rotate-180 transition-all duration-500  ease-in-out ">
-              <Image
-                src="/arrow-right.svg"
-                alt="arrow"
-                width={20}
-                height={20}
-                className="object-contain"
-              />
-            </motion.div>
-          </button>
+          <Button title="Work with us" goTo={"work"} />
         </div>
       </motion.div>
     </div>

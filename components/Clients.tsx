@@ -16,24 +16,43 @@ const companies: Company[] = [
 
 function Clients() {
   return (
-    <div className="mt-10 text-3xl md:text-6xl text-white relative">
-      <motion.ul className="w-full flex items-center justify-around py-6 md:py-10 relative max-w-[350px] sm:max-w-[700px] md:max-w-[1536px] mx-auto overflow-x-hidden mb-10 masked h-20 md:h-28">
-        {companies.map((company, index) => (
+    <div className="w-[90%] mx-auto flex  gap-4 mt-20 overflow-x-auto remove-scrollbar masked">
+      <motion.ul
+        className="w-full flex items-center justify-center gap-4 pr-4 "
+        animate={{
+          x: [0, "-100%"],
+        }}
+        transition={{
+          duration: 5,
+          ease: "linear",
+          repeat: Infinity,
+        }}
+      >
+        {companies.map((company) => (
           <motion.li
-            animate={{
-              left: "-100%",
-              transition: {
-                duration: 30,
-                repeat: Infinity,
-                ease: "linear",
-                delay: (30 / companies.length) * (3 - company.id) * -1,
-              },
-            }}
             key={company.id}
-            style={{
-              left: `calc(100% + ${index * 200}px)`,
-            }}
-            className="text-white font-semibold absolute w-fit flex items-center justify-center whitespace-nowrap px-8 md:px-16"
+            className="text-white font-semibold shrink-0 grow-0 basis-1 text-[3rem] p-[1em]"
+          >
+            {company.name}
+          </motion.li>
+        ))}
+      </motion.ul>
+      <motion.ul
+        aria-hidden="true"
+        className="w-full  items-center justify-center gap-4 hidden md:flex pr-4 "
+        animate={{
+          x: [0, "-100%"],
+        }}
+        transition={{
+          duration: 5,
+          ease: "linear",
+          repeat: Infinity,
+        }}
+      >
+        {companies.map((company) => (
+          <motion.li
+            key={company.id}
+            className="text-white font-semibold shrink-0 grow-0 text-[3rem] p-[1em]"
           >
             {company.name}
           </motion.li>
@@ -44,3 +63,16 @@ function Clients() {
 }
 
 export default Clients;
+
+// animate={{
+//               left: "-100%",
+//               transition: {
+//                 duration: 30,
+//                 repeat: Infinity,
+//                 ease: "linear",
+//                 delay: (30 / companies.length) * (5 - company.id) * -1,
+//               },
+//             }}
+// style={{
+//               left: `calc(100% + ${index * 200}px)`,
+//             }}

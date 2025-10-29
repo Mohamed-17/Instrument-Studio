@@ -3,7 +3,10 @@ import React from "react";
 import Team from "./Team";
 function About() {
   return (
-    <div className="w-full flex justify-center flex-col items-center gap-15 h-fit relative">
+    <div
+      className="w-full flex justify-center flex-col items-center gap-15 h-fit relative"
+      id="about"
+    >
       <div className="text-center space-y-2 text-white">
         <div className="font-bold text-[14px] tracking-[1px] uppercase leading-[22px] ">
           Since 2017

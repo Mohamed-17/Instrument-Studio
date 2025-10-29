@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import * as motion from "motion/react-client";
 function Navbar() {
@@ -22,9 +23,36 @@ function Navbar() {
         className="bg-[#1A1A1A] flex items-center justify-evenly
         w-80 rounded-full h-12"
       >
-        <li>Work</li>
-        <li>About</li>
-        <li>Contact</li>
+        <li
+          className="cursor-pointer"
+          onClick={() => {
+            document.querySelector("#work")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
+          Work
+        </li>
+        <li
+          className="cursor-pointer"
+          onClick={() => {
+            document.querySelector("#about")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
+          About
+        </li>
+        <li
+          className="cursor-pointer"
+          onClick={() => {
+            document.querySelector("#contact")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
+          Contact
+        </li>
       </motion.ul>
     </motion.nav>
   );

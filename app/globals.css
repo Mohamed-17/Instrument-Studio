@@ -28,3 +28,6 @@ body {
     rgba(0, 0, 0, 0)
   );
 }
+.remove-scrollbar::-webkit-scrollbar {
+  display: none;
+}

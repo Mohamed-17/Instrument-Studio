@@ -25,7 +25,7 @@ const childVariants = {
 };
 function Works() {
   return (
-    <div className="px-4 md:px-6 space-y-10 mb-20">
+    <div className="px-4 md:px-6 space-y-10 mb-20" id="work">
       <motion.div
         className="flex  flex-col md:flex-row gap-8 items-center justify-center px-5"
         variants={parentVariants}
@@ -108,8 +108,9 @@ function Works() {
           <Image
             src={"/sweatshirt.png"}
             alt="Sweatshirt"
-            width={800}
-            height={800}
+            width={4000}
+            height={2000}
+            quality={100}
             className="object-contain absolute w-120 h-120 top-10 left-[50%] -translate-x-[50%]"
           />
           <div className="w-full h-full flex justify-center items-end text-[18px] md:text-[24px] lg:text-[32px] pb-10 text-white">
