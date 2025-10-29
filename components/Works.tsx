@@ -42,8 +42,8 @@ function Works() {
         >
           <div className="absolute top-0 -left-10">
             <Image
-              src={"/silver1.png"}
-              alt="silver1"
+              src={"/Silver1.png"}
+              alt="Silver1"
               width={1000}
               height={1000}
               className="w-[200px] md:w-[300px] lg:w-[400px]  object-contain"
@@ -51,8 +51,8 @@ function Works() {
           </div>
           <motion.div className="absolute  lg:top-5 lg:left-20 ">
             <Image
-              src={"/silver2.png"}
-              alt="silver2"
+              src={"/Silver2.png"}
+              alt="Silver2"
               width={1000}
               height={1000}
               className="lg:w-[600px] object-contain"
@@ -60,8 +60,8 @@ function Works() {
           </motion.div>
           <div className="absolute bottom-0 -right-30">
             <Image
-              src={"/silver3.png"}
-              alt="silver3"
+              src={"/Silver3.png"}
+              alt="Silver3"
               width={1000}
               height={1000}
               className="w-[400px] h-[400px] object-contain"
