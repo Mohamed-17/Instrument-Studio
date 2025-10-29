@@ -11,7 +11,7 @@ const parentVariants = {
     y: 0,
     transition: {
       staggerChildren: 0.3,
-      delayChildren: 0.8,
+      delayChildren: 0.3,
     },
   },
 };
