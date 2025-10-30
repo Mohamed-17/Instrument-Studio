@@ -1,5 +1,6 @@
 import React from "react";
-import * as motion from "motion/react-client";
+import InfiniteSlider from "./ui/infinite-slider";
+import { ProgressiveBlur } from "./ui/progressive-blur";
 
 interface Company {
   id: number;
@@ -16,63 +17,40 @@ const companies: Company[] = [
 
 function Clients() {
   return (
-    <div className="w-[90%] mx-auto flex  gap-4 mt-20 overflow-x-auto remove-scrollbar masked">
-      <motion.ul
-        className="w-full flex items-center justify-center gap-4 pr-4 "
-        animate={{
-          x: [0, "-100%"],
-        }}
-        transition={{
-          duration: 5,
-          ease: "linear",
-          repeat: Infinity,
-        }}
-      >
-        {companies.map((company) => (
-          <motion.li
-            key={company.id}
-            className="text-white font-semibold shrink-0 grow-0 basis-1 text-[3rem] p-[1em]"
-          >
-            {company.name}
-          </motion.li>
-        ))}
-      </motion.ul>
-      <motion.ul
-        aria-hidden="true"
-        className="w-full  items-center justify-center gap-4 hidden md:flex pr-4 "
-        animate={{
-          x: [0, "-100%"],
-        }}
-        transition={{
-          duration: 5,
-          ease: "linear",
-          repeat: Infinity,
-        }}
-      >
-        {companies.map((company) => (
-          <motion.li
-            key={company.id}
-            className="text-white font-semibold shrink-0 grow-0 text-[3rem] p-[1em]"
-          >
-            {company.name}
-          </motion.li>
-        ))}
-      </motion.ul>
-    </div>
+    <main className="overflow-x-hidden mt-10">
+      <section className="pb-16 md:pb-32 masked">
+        <div className="group relative m-auto max-w-6xl px-6">
+          <div className="flex flex-col items-center md:flex-row ">
+            <div className="md:max-w-44 md:border-r md:pr-6 border-b pb-6 md:pb-0">
+              <p className="text-end text-sm">Powering the best teams</p>
+            </div>
+            <div className="relative py-10 md:w-[calc(100%-11rem)]">
+              <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
+                {companies.map((company) => (
+                  <div key={company.id} className="flex">
+                    {company.name}
+                  </div>
+                ))}
+              </InfiniteSlider>
+
+              <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
+              <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
+              <ProgressiveBlur
+                className="pointer-events-none absolute left-0 top-0 h-full w-20"
+                direction="left"
+                blurIntensity={1}
+              />
+              <ProgressiveBlur
+                className="pointer-events-none absolute right-0 top-0 h-full w-20"
+                direction="right"
+                blurIntensity={1}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 
 export default Clients;
-
-// animate={{
-//               left: "-100%",
-//               transition: {
-//                 duration: 30,
-//                 repeat: Infinity,
-//                 ease: "linear",
-//                 delay: (30 / companies.length) * (5 - company.id) * -1,
-//               },
-//             }}
-// style={{
-//               left: `calc(100% + ${index * 200}px)`,
-//             }}
